@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffc0cb; /* Fundal alb */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary, .btn-danger, .btn-success {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .btn-success{
+            background-color: purple;
+        }
+
+        .btn-danger{
+            background-color: purple;
+        }
+
+        .btn-primary{
+            background-color: purple;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <h1>Add Product</h1>
+    <p><a href="/manage-products" class="btn btn-primary">Manage Products</a></p>
+    <p><a href="/logout" class="btn btn-danger">Logout</a></p>
+    <form action="/add-product" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Add Product</button>
+    </form>
+
+</body>
+
+</html>

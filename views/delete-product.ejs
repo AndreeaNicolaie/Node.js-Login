@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffc0cb; /* Fundal alb */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .btn-danger, .btn-secondary {
+            font-size: 18px;
+            margin-top: 20px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <h1>Delete Product</h1>
+    <p>Are you sure you want to delete the product "<%= product.name %>"?</p>
+    <form action="/delete-product/<%= product.id %>" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="/manage-products" class="btn btn-secondary">Cancel</a>
+    </form>
+
+</body>
+
+</html>

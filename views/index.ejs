@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffc0cb;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #fff;
+        }
+
+        .user-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .navbar-link {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .main-content {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .main-content h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .handwritten-text {
+            font-size: 48px !important;
+            color: #333;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .main-content {
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Welcome<%= user ? `, ${user.username}` : '' %>!</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <% if (user) { %>
+                    <li class="nav-item">
+                        <a href="/manage-products" class="nav-link navbar-link">Produse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link navbar-link">Logout</a>
+                    </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link navbar-link">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register" class="nav-link navbar-link">Register</a>
+                        </li>
+                        <% } %>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <h1 class="handwritten-text">Aici sunt produsele nevoilor tale!!</h1>
+    </div>
+
+</body>
+
+</html>

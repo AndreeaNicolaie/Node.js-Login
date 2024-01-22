@@ -1,0 +1,81 @@
+<!-- views/login.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8d7da; /* Roz deschis pentru fundal */
+        }
+
+        .container {
+            background-color: #fff; /* Fundal alb pentru container */
+            border-radius: 10px; /* Margini rotunjite */
+            padding: 20px; /* Spațierea din interiorul containerului */
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbră pentru un aspect tridimensional */
+        }
+
+        h1 {
+            color: #eb1cf3; /* Culoare de accent pentru titlu */
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            color:  #eb1cf3; /* Culoare de accent pentru etichete */
+        }
+
+        button {
+            background-color:  #eb1cf3; /* Culoare de accent pentru buton */
+            color: #fff; /* Text alb pentru contrast */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:  #eb1cf3; /* Culoare mai închisă la survol */
+        }
+
+        p {
+            margin-top: 20px;
+            color: #6c757d; /* Culoare mai închisă pentru text secundar */
+        }
+
+        a {
+            color:  #eb1cf3; /* Culoare de accent pentru link-uri */
+        }
+
+        a:hover {
+            color:  #eb1cf3; /* Culoare mai închisă la survol */
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <h1>Login</h1>
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required class="form-control">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required class="form-control">
+        <br>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/register">Register here</a>.</p>
+</body>
+
+</html>

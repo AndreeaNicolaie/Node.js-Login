@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produse</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffc0cb; /* Fundal alb */
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #ffc0cb; /* Roz pentru bara de navigare */
+        }
+
+        .navbar-link {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .list-group-item {
+            font-size: 18px;
+        }
+
+        .btn-group {
+            margin-left: 10px;
+            background-color: purple;
+        }
+
+        .btn-primary, .btn-danger, .btn-success {
+            font-size: 16px;
+            background-color: purple;
+        }
+
+        .btn-success {
+            margin-top: 15px;
+            background-color: purple;
+        }
+
+        .handwritten-text {
+            font-size: 48px;
+            color: #333;
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Produse</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link navbar-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link navbar-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="handwritten-text">Produsele Noastre</h1>
+        <ul class="list-group">
+            <% products.forEach(product=> { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= product.name %> - <%= product.price %>
+                    <span class="btn-group">
+                        <a href="/edit-product/<%= product.id %>" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete-product/<%= product.id %>" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Are you sure want to delete this record?')">Delete</a>
+                    </span>
+                </li>
+            <% }); %>
+        </ul>
+        <a href="/add-product" class="btn btn-success mt-3">Add Product</a>
+    </div>
+
+</body>
+
+</html>
